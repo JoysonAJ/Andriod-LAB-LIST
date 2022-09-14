@@ -72,8 +72,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,RECOGNIZER_RESULT);
             }
         });
-
-
     }
 
     @Override
@@ -81,6 +79,14 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(data != null && resultCode == RESULT_OK){
+      /*
+            ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            String speechText = matches.get(0);
+            inputText.setText("");
+            inputText.setText(speechText);
+            */
+
+            //            or
             String speechText = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS).get(0);
             inputText.setText("");
             inputText.setText(speechText);

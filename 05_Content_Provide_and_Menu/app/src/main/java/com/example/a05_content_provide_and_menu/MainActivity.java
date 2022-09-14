@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         display_Contact();
     }
-
+//Step 2 : Adding Menu to app
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
