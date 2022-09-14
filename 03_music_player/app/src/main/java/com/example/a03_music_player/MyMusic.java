@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
+import android.provider.Settings;
 
 public class MyMusic extends Service {
     MediaPlayer mediaPlayer;
@@ -13,7 +14,9 @@ public class MyMusic extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        mediaPlayer = MediaPlayer.create(this,R.raw.music);
+//        mediaPlayer = MediaPlayer.create(this,R.raw.music);
+//        if don't have music audio then choose the default ringtone
+        mediaPlayer =MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
     }
