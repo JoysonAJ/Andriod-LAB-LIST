@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         display_Contact();
     }
-//Step 2 : Adding Menu to app
+    //Step 2 : Adding Menu to app
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         contacts = new ArrayList<String>();
 
         cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+
 
         if (cursor.getCount() > 0) {
             while (cursor.moveToNext()) {

@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                     FileOutputStream fileOutputStream = openFileOutput(INTERNAL_FILE, MODE_PRIVATE);
                     fileOutputStream.write(text.getBytes());
                     inputText.getText().clear();
-                    ;
                     Toast.makeText(MainActivity.this, "Saved", Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -113,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
         externalLoad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(MainActivity.this, (Manifest.permission.WRITE_EXTERNAL_STORAGE)) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+                if (ContextCompat.checkSelfPermission(MainActivity.this, (Manifest.permission.READ_EXTERNAL_STORAGE)) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE,}, 0);
                 }
                 File file = new File(getExternalFilesDir(FILE_PATH), EXTERNAL_FILE);
 

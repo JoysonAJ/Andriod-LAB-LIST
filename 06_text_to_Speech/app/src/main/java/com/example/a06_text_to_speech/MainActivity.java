@@ -22,10 +22,8 @@ public class MainActivity extends AppCompatActivity {
     Button readLoud, clearText;
 
     TextToSpeech textToSpeech;
-
-
-
     ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
